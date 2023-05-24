@@ -1,0 +1,35 @@
+---
+import { Picture } from "@astrojs/image/components";
+import type { ImageMetadata } from "astro";
+import { getImage } from "@astrojs/image";
+
+interface Props {
+  imageName?: string | undefined;
+  alt?: string | undefined;
+  eager?: boolean;
+}
+
+const imagePath =
+  "../assets/" + Astro.props.imageName ?? "placeholder-hero.jpg";
+
+const images = import.meta.glob<ImageMetadata>("../assets/*", {
+  import: "default",
+});
+
+const imagesrc = await images[imagePath]?.();
+
+const image = imagesrc ? await getImage({ src: imagesrc, alt: "" }) : undefined;
+---
+
+{
+  imagesrc && (
+    <Picture
+      loading={Astro.props.eager ? "eager" : "lazy"}
+      widths={[500, 1080]}
+      width={+(image?.width ?? 0)}
+      height={+(image?.height ?? 0)}
+      src={imagesrc}
+      alt={Astro.props.alt ?? ""}
+    />
+  )
+}
