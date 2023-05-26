@@ -7,6 +7,7 @@ interface Props {
   imageName?: string | undefined;
   alt?: string | undefined;
   eager?: boolean;
+  class: string;
 }
 
 const imagePath =
@@ -30,6 +31,7 @@ const image = imagesrc ? await getImage({ src: imagesrc, alt: "" }) : undefined;
       height={+(image?.height ?? 0)}
       src={imagesrc}
       alt={Astro.props.alt ?? ""}
+      class={Astro.props.class}
     />
   )
 }

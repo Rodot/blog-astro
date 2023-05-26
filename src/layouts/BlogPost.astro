@@ -8,7 +8,7 @@ import BasePicture from "../components/BasePicture.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -20,17 +20,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <Header />
     <main>
       <article>
-        <BasePicture imageName={heroImage} eager />
+        <BasePicture imageName={heroImage} eager class="mb-4" />
 
         <h1 class="title">{title}</h1>
         <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              Last updated on <FormattedDate date={updatedDate} />
-            </div>
-          )
-        }
         <hr />
         <slot />
       </article>

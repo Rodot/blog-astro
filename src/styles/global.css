@@ -7,10 +7,34 @@ html {
 @tailwind utilities;
 
 @layer base {
+  h1,
+  h2,
+  h3 {
+    @apply font-black;
+    @apply uppercase;
+    @apply text-orange-600;
+  }
   h1 {
     @apply text-2xl;
   }
   h2 {
     @apply text-xl;
+  }
+  a {
+    @apply text-orange-600;
+  }
+  a:hover {
+    @apply underline;
+  }
+  body {
+    margin: auto;
+    max-width: 752px; /* 720px content */
+    @apply p-4;
+    @apply min-h-screen;
+  }
+  hr {
+    @apply border-t-2;
+    @apply mt-4;
+    @apply mb-4;
   }
 }
