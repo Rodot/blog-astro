@@ -1,5 +1,7 @@
 html {
   scrollbar-gutter: stable;
+  @apply underline-offset-2;
+  @apply text-gray-600;
 }
 
 @tailwind base;
@@ -12,7 +14,6 @@ html {
   h3 {
     @apply font-black;
     @apply uppercase;
-    @apply text-orange-600;
   }
   h1 {
     @apply text-2xl;
@@ -21,7 +22,9 @@ html {
     @apply text-xl;
   }
   a {
+    @apply font-semibold;
     @apply text-orange-600;
+    @apply transition-all;
   }
   a:hover {
     @apply underline;
