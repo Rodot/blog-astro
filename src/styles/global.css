@@ -1,6 +1,5 @@
 html {
   scrollbar-gutter: stable;
-  @apply underline-offset-2;
   @apply text-gray-600;
 }
 
@@ -24,10 +23,13 @@ html {
   a {
     @apply font-semibold;
     @apply text-orange-600;
-    @apply transition-all;
+    @apply border-orange-600;
+    @apply box-content;
   }
-  a:hover {
-    @apply underline;
+  a:hover,
+  a:active {
+    @apply border-b-4;
+    @apply -mb-1;
   }
   body {
     margin: auto;

@@ -1,0 +1,12 @@
+---
+const size = Astro.props.size ?? "1.2em";
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox=`0 0 24 24`
+  class="inline align-text-bottom fill-current"
+>
+  <path d={Astro.props.path}></path>
+</svg>

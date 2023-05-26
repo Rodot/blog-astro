@@ -1,6 +1,8 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import Icon from "../components/Icon.astro";
+import { mdiMenu } from "@mdi/js";
+import HeaderLinks from "./HeaderLinks.astro";
 ---
 
 <header
@@ -11,10 +13,33 @@ import { SITE_TITLE } from "../consts";
       {SITE_TITLE}
     </h2>
   </a>
-  <nav class="flex flex-row flex-wrap gap-4">
-    <HeaderLink href="/freelance/">Freelance</HeaderLink>
-    <HeaderLink href="/scree-game/">Scree</HeaderLink>
-    <HeaderLink href="/blog/">Blog</HeaderLink>
-    <HeaderLink href="/contact/">Contact</HeaderLink>
+
+  <!-- desktop menu -->
+  <nav class="hidden sm:block">
+    <div class="flex flex-row gap-4">
+      <HeaderLinks />
+    </div>
   </nav>
+
+  <!-- mobile menu  -->
+  <input type="checkbox" id="menu-button" class="hidden" />
+  <label for="menu-button" class="text-orange-600 sm:hidden">
+    <Icon path={mdiMenu} size="32" />
+  </label>
+  <div id="menu-content" class="hidden w-full">
+    <nav class="flex flex-col gap-4 items-start">
+      <HeaderLinks />
+    </nav>
+  </div>
 </header>
+
+<style>
+  label[for="menu-button"] {
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #menu-button:checked ~ #menu-content {
+    display: block;
+  }
+</style>
