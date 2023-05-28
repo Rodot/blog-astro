@@ -1,0 +1,41 @@
+---
+import { mdiGreaterThan } from "@mdi/js";
+import BasePicture from "./BasePicture.astro";
+import Icon from "./Icon.astro";
+
+export interface Props {
+  title: string;
+  icon?: string;
+  image?: string;
+  cta?: string;
+  url?: string;
+}
+---
+
+<div class="flex flex-col sm:flex-row items-center gap-4 my-12">
+  <div style="max-width: 200px;">
+    <BasePicture
+      filename={Astro.props.image}
+      aspectRatio={1}
+      eager
+      class="rounded-full"
+    />
+  </div>
+  <div>
+    <h2>
+      {Astro.props.icon && <Icon path={Astro.props.icon} />}
+      <span>{Astro.props.title}</span>
+    </h2>
+    <slot />
+    {
+      Astro.props.cta && Astro.props.url && (
+        <h2>
+          <a href={Astro.props.url}>
+            <Icon path={mdiGreaterThan} />
+            <span>{Astro.props.cta}</span>
+          </a>
+        </h2>
+      )
+    }
+  </div>
+</div>

@@ -38,8 +38,8 @@ html {
   }
   hr {
     @apply border-t-2;
-    @apply mt-4;
-    @apply mb-4;
+    @apply mt-8;
+    @apply mb-8;
   }
   strong {
     @apply font-bold;
