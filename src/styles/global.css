@@ -32,9 +32,7 @@ html {
   }
   body {
     margin: auto;
-    max-width: 752px; /* 720px content */
-    @apply px-4;
-    @apply min-h-screen;
+    max-width: 720px;
   }
   hr {
     @apply border-t-2;

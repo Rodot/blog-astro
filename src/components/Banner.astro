@@ -13,12 +13,13 @@ export interface Props {
 ---
 
 <div class="flex flex-col sm:flex-row items-center gap-4 my-12">
-  <div style="max-width: 200px;">
+  <div style="max-width: 180px;">
     <BasePicture
       filename={Astro.props.image}
       aspectRatio={1}
       eager
       class="rounded-full"
+      sizes="180px"
     />
   </div>
   <div class="w-full">

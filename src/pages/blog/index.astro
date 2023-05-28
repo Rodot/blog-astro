@@ -8,7 +8,7 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout>
+<BaseLayout class="p-4">
   <ul>
     {
       posts.map((post) => (
