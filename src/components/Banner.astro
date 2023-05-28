@@ -1,5 +1,5 @@
 ---
-import { mdiGreaterThan } from "@mdi/js";
+import { mdiGreaterThan, mdiLessThan } from "@mdi/js";
 import BasePicture from "./BasePicture.astro";
 import Icon from "./Icon.astro";
 
@@ -23,17 +23,18 @@ export interface Props {
     />
   </div>
   <div class="w-full">
-    <h2>
+    <h2 class="text-center sm:text-left">
       {Astro.props.icon && <Icon path={Astro.props.icon} />}
       <span>{Astro.props.title}</span>
     </h2>
     <slot />
     {
       Astro.props.cta && Astro.props.url && (
-        <h2>
+        <h2 class="text-center sm:text-left mt-4">
           <a href={Astro.props.url}>
             <Icon path={mdiGreaterThan} />
             <span>{Astro.props.cta}</span>
+            <Icon path={mdiLessThan} />
           </a>
         </h2>
       )

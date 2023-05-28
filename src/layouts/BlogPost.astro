@@ -1,19 +1,20 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
-import BasePicture from "../components/BasePicture.astro";
 import BaseLayout from "./BaseLayout.astro";
 
 type Props = CollectionEntry<"blog">["data"];
-
-const { title, description, pubDate, heroImage } = Astro.props;
+const { props } = Astro;
 ---
 
-<BaseLayout title={title} description={description}>
-  <BasePicture filename={heroImage} eager />
+<BaseLayout
+  title={props.title}
+  description={props.description}
+  heroImage={props.heroImage}
+>
   <article class="p-4">
-    <h1 class="title mt-4">{title}</h1>
-    <FormattedDate date={pubDate} />
+    <h1 class="title mt-4">{props.title}</h1>
+    <FormattedDate date={props.pubDate} />
     <hr />
     <slot />
   </article>

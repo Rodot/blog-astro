@@ -1,0 +1,82 @@
+---
+import {
+  mdiEarth,
+  mdiGreaterThan,
+  mdiHeadSnowflake,
+  mdiLessThan,
+  mdiLightningBolt,
+  mdiRocketLaunch,
+  mdiSchool,
+  mdiShieldCheck,
+  mdiSync,
+} from "@mdi/js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BannerIcon from "../components/BannerIcon.astro";
+import Icon from "../components/Icon.astro";
+import { CONSTS } from "../consts";
+---
+
+<BaseLayout
+  title="Freelance CTO"
+  description="Let's work together!"
+  heroImage="hero-freelance.jpg"
+>
+  <article class="p-4">
+    <h1>Freelance CTO</h1>
+    <BannerIcon icon={mdiRocketLaunch}>
+      <p>
+        I help you
+        <strong>craft innovative products</strong> from the ground up, leveraging
+        my experience in engineering, project management, and business.
+      </p>
+    </BannerIcon>
+
+    <h2 class="text-center">
+      <a href={CONSTS.urls.contact}>
+        <Icon path={mdiGreaterThan} />
+        <span>Contact me</span>
+        <Icon path={mdiLessThan} />
+      </a>
+    </h2>
+
+    <h2>How I work</h2>
+
+    <BannerIcon icon={mdiShieldCheck}>
+      <strong>No-nonsense</strong> - I build authentic partnerships through trust
+      and transparency, investing in your project with the same care and dedication
+      as if it were my own.
+    </BannerIcon>
+
+    <BannerIcon icon={mdiSchool}>
+      <strong>Broad Expertise</strong> - With a vast skill set (see below) and a
+      rapid learning ability, I adapt quickly to new fields. Should a project require
+      more specialized knowledge, my network of experts stands ready.
+    </BannerIcon>
+
+    <BannerIcon icon={mdiLightningBolt}>
+      <strong>Efficient and Autonomous</strong> - After setting the goal together,
+      I'll ensure efficient progress by iteratively testing the MVP, allowing you
+      to focus on launching your product.
+    </BannerIcon>
+
+    <BannerIcon icon={mdiSync}>
+      <strong>Agile Delivery and Fair Billing</strong> - Tangible results and updated
+      priorities after each sprint. Transparent billing with no commitment beyond
+      the current milestone.
+    </BannerIcon>
+
+    <BannerIcon icon={mdiHeadSnowflake}>
+      <strong>Your Intellectual Property</strong> - You retain full ownership of
+      your project. All plans, codes, and intellectual property are yours at no additional
+      cost.
+    </BannerIcon>
+
+    <BannerIcon icon={mdiEarth}>
+      <strong>Global Network</strong> - Don't limit your vision to one location.
+      With fluency in French and English backed by a network spanning from the USA
+      to China, I can help bring your ideas to the global stage.
+    </BannerIcon>
+
+    <h2>Skills</h2>
+  </article>
+</BaseLayout>
