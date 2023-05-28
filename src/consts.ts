@@ -8,6 +8,6 @@ export const CONSTS = {
     freelance: "/freelance-cto/",
     scree: "/scree-game/",
     blog: "/blog/",
-    contact: "/contact",
+    contact: "/contact/",
   },
 };

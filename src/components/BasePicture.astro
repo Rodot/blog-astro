@@ -32,7 +32,7 @@ const image = imagesrc
 const width = +(image?.width ?? 0);
 const height = props.aspectRatio
   ? width * props.aspectRatio
-  : +(image?.width ?? 0);
+  : +(image?.height ?? 0);
 ---
 
 {

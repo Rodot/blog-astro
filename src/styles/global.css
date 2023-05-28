@@ -21,14 +21,20 @@ html {
     @apply text-xl;
   }
   a {
-    @apply text-orange-600;
-    @apply border-orange-600;
+    @apply text-orange-700;
+    @apply border-orange-700;
     @apply box-content;
   }
   a:hover,
   a:active {
     @apply border-b-2;
     @apply -mb-[2px];
+    @apply text-orange-500;
+    @apply border-orange-500;
+  }
+  article a {
+    @apply border-b-[1px];
+    @apply -mb-[1px];
   }
   body {
     margin: auto;
