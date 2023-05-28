@@ -28,13 +28,13 @@ html {
   }
   a:hover,
   a:active {
-    @apply border-b-4;
-    @apply -mb-1;
+    @apply border-b-2;
+    @apply -mb-[2px];
   }
   body {
     margin: auto;
     max-width: 752px; /* 720px content */
-    @apply p-4;
+    @apply px-4;
     @apply min-h-screen;
   }
   hr {
