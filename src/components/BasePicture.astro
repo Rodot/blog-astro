@@ -4,14 +4,13 @@ import type { ImageMetadata } from "astro";
 import { getImage } from "@astrojs/image";
 
 interface Props {
-  imageName?: string | undefined;
+  filename?: string | undefined;
   alt?: string | undefined;
   eager?: boolean;
-  class: string;
+  class?: string;
 }
 
-const imagePath =
-  "../assets/" + Astro.props.imageName ?? "placeholder-hero.jpg";
+const imagePath = "../assets/" + Astro.props.filename ?? "placeholder-hero.jpg";
 
 const images = import.meta.glob<ImageMetadata>("../assets/*", {
   import: "default",

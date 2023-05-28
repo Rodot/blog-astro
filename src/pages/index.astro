@@ -1,47 +1,65 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BasePicture from "../components/BasePicture.astro";
+import { mdiBriefcase, mdiController, mdiNewspaper } from "@mdi/js";
+import Icon from "../components/Icon.astro";
+import { CONSTS } from "../consts";
 ---
 
 <BaseLayout>
-  <h1>🧑‍🚀 Hello, Astronaut!</h1>
-  <p>
-    Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
-    template. This template serves as a lightweight, minimally-styled starting point
-    for anyone looking to build a personal website, blog, or portfolio with Astro.
-  </p>
-  <p>
-    This template comes with a few integrations already configured in your
-    <code>astro.config.mjs</code> file. You can customize your setup with
-    <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-    like Tailwind, React, or Vue to your project.
-  </p>
-  <p>Here are a few ideas on how to get started with the template:</p>
-  <ul>
-    <li>Edit this page in <code>src/pages/index.astro</code></li>
-    <li>
-      Edit the site header items in <code>src/components/Header.astro</code>
-    </li>
-    <li>
-      Add your name to the footer in <code>src/components/Footer.astro</code>
-    </li>
-    <li>
-      Check out the included blog posts in <code>src/pages/blog/</code>
-    </li>
-    <li>
-      Customize the blog post page layout in <code
-        >src/layouts/BlogPost.astro</code
-      >
-    </li>
-  </ul>
-  <p>
-    Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-      >read the docs
-    </a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-  </p>
-  <p>
-    Looking for a blog template with a bit more personality? Check out <a
-      href="https://github.com/Charca/astro-blog-template"
-      >astro-blog-template
-    </a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-  </p>
+  <div class="flex flex-col md:flex-row items-center gap-4 my-4">
+    <div>
+      <h2>Welcome!</h2>
+      <p>
+        I am passionate about crafting innovative products from the ground up,
+        leveraging my experience in
+        <strong>engineering, management, and business</strong>.
+      </p>
+      <p>
+        I bring a fresh vision and drive rapid progression at the early stages
+        of every project, using a combination of
+        <strong>methodology, creativity, and a proactive attitude</strong>.
+      </p>
+      <p>Let me give you a tour!</p>
+    </div>
+    <div class="max-w-xs">
+      <BasePicture filename="avatar.jpg" eager class="rounded-full" />
+    </div>
+  </div>
+
+  <hr />
+
+  <h2>
+    <Icon path={mdiBriefcase} />
+    <span>Freelancing CTO</span>
+  </h2>
+  <p></p>
+  <h2>
+    <a href={CONSTS.urls.freelance}>More information</a>
+  </h2>
+
+  <hr />
+
+  <h2>
+    <Icon path={mdiController} />
+    <span>Scree - The game</span>
+  </h2>
+  <p></p>
+  <h2>
+    <a href={CONSTS.urls.scree}>
+      <span>Watch the trailer</span>
+    </a>
+  </h2>
+
+  <hr />
+
+  <h2>
+    <Icon path={mdiNewspaper} />
+    <span>Blog</span>
+  </h2>
+  <h2>
+    <a href={CONSTS.urls.blog}>
+      <span>Read the blog</span>
+    </a>
+  </h2>
 </BaseLayout>

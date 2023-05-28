@@ -1,16 +1,16 @@
 ---
-import { SITE_TITLE } from "../consts";
 import Icon from "../components/Icon.astro";
 import { mdiMenu } from "@mdi/js";
 import HeaderLinks from "./HeaderLinks.astro";
+import { CONSTS } from "../consts";
 ---
 
 <header
   class="py-4 mb-4 flex flex-row justify-between flex-wrap gap-4 border-b-2 sticky top-0 bg-white"
 >
-  <a href="/">
+  <a href={CONSTS.urls.home}>
     <h2 class="whitespace-nowrap">
-      {SITE_TITLE}
+      {CONSTS.site.title}
     </h2>
   </a>
 
@@ -23,10 +23,10 @@ import HeaderLinks from "./HeaderLinks.astro";
 
   <!-- mobile menu  -->
   <input type="checkbox" id="menu-button" class="hidden" />
-  <label for="menu-button" class="text-orange-600 md:hidden">
+  <label for="menu-button">
     <Icon path={mdiMenu} size="28" />
   </label>
-  <div id="menu-content" class="hidden w-full">
+  <div id="menu-content">
     <nav class="flex flex-col gap-4 items-start">
       <HeaderLinks />
     </nav>
@@ -36,9 +36,17 @@ import HeaderLinks from "./HeaderLinks.astro";
 <style>
   label[for="menu-button"] {
     cursor: pointer;
+    @apply text-orange-600;
+    @apply md:hidden;
+  }
+
+  #menu-content {
+    @apply hidden;
+    @apply w-full;
   }
 
   #menu-button:checked ~ #menu-content {
-    display: block;
+    @apply block;
+    @apply md:hidden;
   }
 </style>

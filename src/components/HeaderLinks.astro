@@ -2,21 +2,22 @@
 import HeaderLink from "./HeaderLink.astro";
 import Icon from "../components/Icon.astro";
 import { mdiBriefcase, mdiController, mdiEmail, mdiNewspaper } from "@mdi/js";
+import { CONSTS } from "../consts";
 ---
 
-<HeaderLink href="/freelance/">
+<HeaderLink href={CONSTS.urls.freelance}>
   <Icon path={mdiBriefcase} />
   <span>Freelance</span>
 </HeaderLink>
-<HeaderLink href="/scree-game/">
+<HeaderLink href={CONSTS.urls.scree}>
   <Icon path={mdiController} />
   <span>Scree</span>
 </HeaderLink>
-<HeaderLink href="/blog/">
+<HeaderLink href={CONSTS.urls.blog}>
   <Icon path={mdiNewspaper} />
   <span>Blog</span>
 </HeaderLink>
-<HeaderLink href="/contact/">
+<HeaderLink href={CONSTS.urls.contact}>
   <Icon path={mdiEmail} />
   <span>Contact</span>
 </HeaderLink>
