@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#FFAA00",
+        background: "#1A1A1A",
+        text: "white",
+        borders: "#404040",
+      },
+    },
     spacing: {
       0: "0px",
       1: "4px",

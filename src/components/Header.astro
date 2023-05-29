@@ -6,7 +6,7 @@ import { CONSTS } from "../consts";
 ---
 
 <header
-  class="py-2 px-4 flex flex-row justify-between flex-wrap gap-4 border-b-2 sticky top-0 bg-white z-10"
+  class="py-2 px-4 flex flex-row justify-between flex-wrap gap-4 border-b-2 border-borders sticky top-0 bg-stone-800 z-10"
 >
   <a href={CONSTS.urls.home}>
     <h2 class="whitespace-nowrap">
@@ -36,8 +36,11 @@ import { CONSTS } from "../consts";
 <style>
   label[for="menu-button"] {
     cursor: pointer;
-    @apply text-orange-700;
+    @apply text-primary;
     @apply sm:hidden;
+  }
+  label[for="menu-button"]:hover {
+    @apply text-stone-100;
   }
 
   #menu-content {

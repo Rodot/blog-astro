@@ -1,10 +1,9 @@
 ---
 import {
   mdiCog,
+  mdiEmail,
   mdiFlask,
-  mdiGreaterThan,
   mdiHandPeace,
-  mdiLessThan,
   mdiLightbulb,
   mdiRobotHappy,
   mdiRocketLaunch,
@@ -12,12 +11,14 @@ import {
   mdiSpeedometer,
   mdiSync,
   mdiTools,
+  mdiXml,
 } from "@mdi/js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BannerIcon from "../components/BannerIcon.astro";
 import Icon from "../components/Icon.astro";
 import { CONSTS } from "../consts";
 import BasePicture from "../components/BasePicture.astro";
+import Button from "../components/Button.astro";
 ---
 
 <BaseLayout
@@ -26,7 +27,24 @@ import BasePicture from "../components/BasePicture.astro";
   heroImage="hero-freelance.jpg"
 >
   <article class="p-4">
-    <h1 class="text-center">Freelance CTO</h1>
+    <div class="my-8">
+      <h1 class="text-center">Freelance CTO</h1>
+
+      <h2 class="text-center">
+        <span class="text-primary">
+          <Icon path={mdiSync} />
+        </span>
+        <span>Agile</span>
+        <span class="text-primary">
+          <Icon path={mdiXml} />
+        </span>
+        <span>Software</span>
+        <span class="text-primary">
+          <Icon path={mdiTools} />
+        </span>
+        <span>Hardware</span>
+      </h2>
+    </div>
 
     <BannerIcon icon={mdiRocketLaunch}>
       <strong>
@@ -60,13 +78,12 @@ import BasePicture from "../components/BasePicture.astro";
       <strong>Be yourself</strong>, based on a transparent & honest partnership
     </BannerIcon>
 
-    <h2 class="text-center my-8">
-      <a href={CONSTS.urls.contact}>
-        <Icon path={mdiGreaterThan} />
+    <div class="text-center my-16">
+      <Button href={CONSTS.urls.contact}>
+        <Icon path={mdiEmail} />
         <span>Contact me</span>
-        <Icon path={mdiLessThan} />
-      </a>
-    </h2>
+      </Button>
+    </div>
 
     <hr />
 
@@ -95,12 +112,12 @@ import BasePicture from "../components/BasePicture.astro";
 
     <p>
       <i>
-        Gamebuino is portable game console that teaches you how to code by
-        making your own games.
+        A portable game console that teaches you how to code by making your own
+        games.
       </i>
     </p>
     <p>
-      <i>2012-2019</i>
+      <i>2012-2019, 7 years</i>
     </p>
 
     <ul class="list-disc ml-4 mt-4">
@@ -136,7 +153,7 @@ import BasePicture from "../components/BasePicture.astro";
       <li>Design award : Etoile Observeur du design, 2017</li>
     </ul>
 
-    <h3 class="mt-4 mb-16">
+    <h3 class="mt-4">
       Watch the <a
         href="https://www.youtube.com/watch?v=uLS5WzyEINA"
         target="_blank"
@@ -156,7 +173,11 @@ import BasePicture from "../components/BasePicture.astro";
       </a>
     </h3>
 
-    <BasePicture filename="hero-visioshape.jpg" aspectRatio={3 / 1} />
+    <BasePicture
+      class="mt-16"
+      filename="hero-visioshape.jpg"
+      aspectRatio={3 / 1}
+    />
 
     <h2 class="mt-4">CTO - Visioshape</h2>
 
@@ -164,7 +185,7 @@ import BasePicture from "../components/BasePicture.astro";
       <i>Early-stage startup in robotics & computer vision</i>
     </p>
     <p>
-      <i>2019-2021</i>
+      <i>2019-2021, 2 years</i>
     </p>
 
     <ul class="list-disc ml-4 mt-4">
@@ -191,6 +212,30 @@ import BasePicture from "../components/BasePicture.astro";
       <li>
         <strong>Agile &amp; lean</strong> - Continuous benchmark and delivery to
         the end customer from day 1
+      </li>
+    </ul>
+
+    <BasePicture class="mt-16" filename="hero-riaktr.png" aspectRatio={3 / 1} />
+
+    <h2 class="mt-4">Full stack developer - Riaktr</h2>
+
+    <p>
+      <i>Startup turning big data into actionable insights</i>
+    </p>
+    <p>
+      <i>2022, 6 months</i>
+    </p>
+
+    <ul class="list-disc ml-4 mt-4">
+      <li>
+        <strong> Setup design system to reduce time wasted</strong>, from design
+        to implementation
+      </li>
+      <li>
+        <strong> Design and setup seeding library</strong> to simplify e2e testing
+      </li>
+      <li>
+        <strong> Bring energy to the team</strong> with a doer attitude
       </li>
     </ul>
   </article>

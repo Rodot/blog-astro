@@ -1,6 +1,6 @@
 ---
-import { mdiGreaterThan, mdiLessThan } from "@mdi/js";
 import BasePicture from "./BasePicture.astro";
+import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 
 export interface Props {
@@ -10,12 +10,14 @@ export interface Props {
   cta?: string;
   url?: string;
 }
+
+const { props } = Astro;
 ---
 
-<div class="flex flex-col sm:flex-row items-center gap-4 my-12">
+<div class="flex flex-col sm:flex-row items-center gap-4 my-16">
   <div style="max-width: 180px;">
     <BasePicture
-      filename={Astro.props.image}
+      filename={props.image}
       aspectRatio={1}
       eager
       class="rounded-full"
@@ -24,20 +26,18 @@ export interface Props {
   </div>
   <div class="w-full">
     <h2 class="text-center sm:text-left">
-      {Astro.props.icon && <Icon path={Astro.props.icon} />}
-      <span>{Astro.props.title}</span>
+      {
+        props.icon && (
+          <span class="text-primary">
+            <Icon path={props.icon} />
+          </span>
+        )
+      }
+      <span>{props.title}</span>
     </h2>
     <slot />
-    {
-      Astro.props.cta && Astro.props.url && (
-        <h2 class="text-center sm:text-left mt-4">
-          <a href={Astro.props.url}>
-            <Icon path={mdiGreaterThan} />
-            <span>{Astro.props.cta}</span>
-            <Icon path={mdiLessThan} />
-          </a>
-        </h2>
-      )
-    }
+    <div class="text-center sm:text-left mt-4">
+      {props.cta && props.url && <Button href={props.url}>{props.cta}</Button>}
+    </div>
   </div>
 </div>
