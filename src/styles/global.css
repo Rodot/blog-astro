@@ -32,15 +32,6 @@ html {
     @apply text-orange-500;
     @apply border-orange-500;
   }
-  article h1 {
-    @apply pt-4;
-  }
-  article h2 {
-    @apply pt-4;
-  }
-  article p {
-    @apply pt-2;
-  }
   body {
     margin: auto;
     max-width: 720px;

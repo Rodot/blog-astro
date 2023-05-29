@@ -1,5 +1,7 @@
 ---
 import {
+  mdiCog,
+  mdiFlask,
   mdiGreaterThan,
   mdiHandPeace,
   mdiLessThan,
@@ -15,6 +17,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BannerIcon from "../components/BannerIcon.astro";
 import Icon from "../components/Icon.astro";
 import { CONSTS } from "../consts";
+import BasePicture from "../components/BasePicture.astro";
 ---
 
 <BaseLayout
@@ -23,7 +26,7 @@ import { CONSTS } from "../consts";
   heroImage="hero-freelance.jpg"
 >
   <article class="p-4">
-    <h1>Freelance CTO</h1>
+    <h1 class="text-center">Freelance CTO</h1>
 
     <BannerIcon icon={mdiRocketLaunch}>
       <strong>
@@ -57,7 +60,7 @@ import { CONSTS } from "../consts";
       <strong>Be yourself</strong>, based on a transparent & honest partnership
     </BannerIcon>
 
-    <h2 class="text-center">
+    <h2 class="text-center my-8">
       <a href={CONSTS.urls.contact}>
         <Icon path={mdiGreaterThan} />
         <span>Contact me</span>
@@ -65,6 +68,130 @@ import { CONSTS } from "../consts";
       </a>
     </h2>
 
-    <h2>Skills</h2>
+    <hr />
+
+    <h2 class="text-center mb-8">Degrees</h2>
+
+    <BannerIcon icon={mdiFlask}>
+      <strong>Bioengineering Master’s degree</strong>
+      <p>École des Mines, St-Etienne, France</p>
+    </BannerIcon>
+    <BannerIcon icon={mdiCog}>
+      <strong>Mechanics Engineering degree</strong>
+      <p>ENISE, St-Étienne, France</p>
+    </BannerIcon>
+    <BannerIcon icon={mdiLightbulb}>
+      <strong>Entrepreneurship Bachelor’s degree</strong>
+      <p>Université de Lyon, France</p>
+    </BannerIcon>
+
+    <hr />
+
+    <h2 class="text-center mb-8">Experiences</h2>
+
+    <BasePicture filename="hero-gamebuino.jpg" aspectRatio={3 / 1} />
+
+    <h2 class="mt-4">Solo founder - Gamebuino</h2>
+
+    <p>
+      <i>
+        Gamebuino is portable game console that teaches you how to code by
+        making your own games.
+      </i>
+    </p>
+    <p>
+      <i>2012-2019</i>
+    </p>
+
+    <ul class="list-disc ml-4 mt-4">
+      <li>
+        <strong>Made people discover that coding is fun</strong>, in a world
+        running short on software engineers
+      </li>
+      <li>
+        <strong>Created an international community</strong> of passionate open-source
+        content creators
+      </li>
+      <li>
+        <strong>Designed a product</strong> from end-to-end : electronics, firmware,
+        injection molding, packaging…
+      </li>
+      <li>
+        <strong>Ran a business</strong> from end-to-end : funding, marketing, HR,
+        PR…
+      </li>
+      <li>
+        <strong>Produced and shipped</strong> the product at scale and on time
+      </li>
+    </ul>
+
+    <h3 class="mt-4">Achievements</h3>
+
+    <ul class="list-disc ml-4">
+      <li>5000+ consoles shipped, 80% export (USA, Europe, Japan)</li>
+      <li>33 k€ crowdfunded on Indiegogo, 2014</li>
+      <li>66 k€ crowdfunded on Kickstarter, 2018</li>
+      <li>Pitch award : Lauréat EdTech du Trophée des Startup AURA</li>
+      <li>Featured several times on national news</li>
+      <li>Design award : Etoile Observeur du design, 2017</li>
+    </ul>
+
+    <h3 class="mt-4 mb-16">
+      Watch the <a
+        href="https://www.youtube.com/watch?v=uLS5WzyEINA"
+        target="_blank"
+      >
+        Trailer
+      </a>
+      -
+      <a
+        href="https://www.youtube.com/watch?v=Lnf3ajd_GPc&t=11s"
+        target="_blank"
+      >
+        Pitch
+      </a>
+      -
+      <a href="https://www.youtube.com/watch?v=Mdf2XTn5-LU" target="_blank">
+        News
+      </a>
+    </h3>
+
+    <BasePicture filename="hero-visioshape.jpg" aspectRatio={3 / 1} />
+
+    <h2 class="mt-4">CTO - Visioshape</h2>
+
+    <p>
+      <i>Early-stage startup in robotics & computer vision</i>
+    </p>
+    <p>
+      <i>2019-2021</i>
+    </p>
+
+    <ul class="list-disc ml-4 mt-4">
+      <li>
+        <strong>Managed a 2 years-long R&amp;D project</strong> - creating a laser
+        texturing machine (confidential)
+      </li>
+      <li>
+        <strong>Data driven</strong> - Definition of the problem, measurement of
+        success and associated benchmarks
+      </li>
+      <li>
+        <strong>Disruptive</strong> - Designed a system that etches at scales never
+        reached before (patent pending)
+      </li>
+      <li>
+        <strong>Versatile</strong> - Computer vision, robotics, optics, electronics,
+        software architecture
+      </li>
+      <li>
+        <strong>Hands-on</strong> - Make it work with what you have in an early-stage
+        startup
+      </li>
+      <li>
+        <strong>Agile &amp; lean</strong> - Continuous benchmark and delivery to
+        the end customer from day 1
+      </li>
+    </ul>
   </article>
 </BaseLayout>
