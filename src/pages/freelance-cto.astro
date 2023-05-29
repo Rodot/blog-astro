@@ -1,14 +1,15 @@
 ---
 import {
-  mdiEarth,
   mdiGreaterThan,
-  mdiHeadSnowflake,
+  mdiHandPeace,
   mdiLessThan,
-  mdiLightningBolt,
+  mdiLightbulb,
+  mdiRobotHappy,
   mdiRocketLaunch,
-  mdiSchool,
-  mdiShieldCheck,
+  mdiShieldStar,
+  mdiSpeedometer,
   mdiSync,
+  mdiTools,
 } from "@mdi/js";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BannerIcon from "../components/BannerIcon.astro";
@@ -23,12 +24,37 @@ import { CONSTS } from "../consts";
 >
   <article class="p-4">
     <h1>Freelance CTO</h1>
+
     <BannerIcon icon={mdiRocketLaunch}>
-      <p>
-        I help you
-        <strong>craft innovative products</strong> from the ground up, leveraging
-        my experience in engineering, project management, and business.
-      </p>
+      <strong>
+        I design, build and test innovative solutions to your problem
+      </strong>
+    </BannerIcon>
+    <BannerIcon icon={mdiShieldStar}>
+      <strong>Trust 10 years of experience</strong> as an entrepreneur & generalist
+      engineer
+    </BannerIcon>
+    <BannerIcon icon={mdiTools}>
+      <strong>Build now</strong>, with hands-on engineering in software,
+      electronics, and mechanics
+    </BannerIcon>
+    <BannerIcon icon={mdiLightbulb}>
+      <strong>Find unique solutions</strong>, using broad knowledge & high
+      creativity
+    </BannerIcon>
+    <BannerIcon icon={mdiSpeedometer}>
+      <strong>Maximum efficiency</strong>, thanks to continuous delivery and
+      user testing
+    </BannerIcon>
+    <BannerIcon icon={mdiSync}>
+      <strong>Update requirements</strong> on the way using agile project management
+    </BannerIcon>
+    <BannerIcon icon={mdiRobotHappy}>
+      <strong>Satisfaction guaranteed</strong>, with no commitment beyond the
+      current milestone
+    </BannerIcon>
+    <BannerIcon icon={mdiHandPeace}>
+      <strong>Be yourself</strong>, based on a transparent & honest partnership
     </BannerIcon>
 
     <h2 class="text-center">
@@ -38,44 +64,6 @@ import { CONSTS } from "../consts";
         <Icon path={mdiLessThan} />
       </a>
     </h2>
-
-    <h2>How I work</h2>
-
-    <BannerIcon icon={mdiShieldCheck}>
-      <strong>No-nonsense</strong> - I build authentic partnerships through trust
-      and transparency, investing in your project with the same care and dedication
-      as if it were my own.
-    </BannerIcon>
-
-    <BannerIcon icon={mdiSchool}>
-      <strong>Broad Expertise</strong> - With a vast skill set (see below) and a
-      rapid learning ability, I adapt quickly to new fields. Should a project require
-      more specialized knowledge, my network of experts stands ready.
-    </BannerIcon>
-
-    <BannerIcon icon={mdiLightningBolt}>
-      <strong>Efficient and Autonomous</strong> - After setting the goal together,
-      I'll ensure efficient progress by iteratively testing the MVP, allowing you
-      to focus on launching your product.
-    </BannerIcon>
-
-    <BannerIcon icon={mdiSync}>
-      <strong>Agile Delivery and Fair Billing</strong> - Tangible results and updated
-      priorities after each sprint. Transparent billing with no commitment beyond
-      the current milestone.
-    </BannerIcon>
-
-    <BannerIcon icon={mdiHeadSnowflake}>
-      <strong>Your Intellectual Property</strong> - You retain full ownership of
-      your project. All plans, codes, and intellectual property are yours at no additional
-      cost.
-    </BannerIcon>
-
-    <BannerIcon icon={mdiEarth}>
-      <strong>Global Network</strong> - Don't limit your vision to one location.
-      With fluency in French and English backed by a network spanning from the USA
-      to China, I can help bring your ideas to the global stage.
-    </BannerIcon>
 
     <h2>Skills</h2>
   </article>
