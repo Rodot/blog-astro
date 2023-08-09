@@ -1,50 +1,186 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import {
+  mdiBriefcase,
+  mdiCellphone,
+  mdiChip,
+  mdiCloud,
+  mdiCog,
+  mdiController,
+  mdiEmail,
+  mdiGift,
+  mdiHandPeace,
+  mdiLightningBolt,
+  mdiRobotIndustrial,
+  mdiSeal,
+  mdiTruck,
+  mdiWrench,
+} from "@mdi/js";
+import { CONSTS } from "../consts";
+import BannerIcon from "../components/BannerIcon.astro";
+import {
+  mdiRobotHappy,
+  mdiShieldStar,
+  mdiSync,
+  mdiTools,
+  mdiXml,
+} from "@mdi/js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Icon from "../components/Icon.astro";
+import Banner from "../components/Banner.astro";
+import Button from "../components/Button.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout
+  title="Freelance CTO - From idea to product, real quick"
+  description="Let's work together!"
+>
+  <article class="p-4">
+    <div class="my-16">
+      <p class="text-center">
+        <strong>Your Freelance CTO</strong>
+      </p>
+
+      <h1 class="text-center text-primary my-2 text-4xl">
+        From idea to product, <i>real quick</i>
+      </h1>
+
+      <p class="text-center">
+        <strong>
+          <span class="text-primary"> <Icon path={mdiSync} /></span>
+          <span>Agile</span>
+          <span class="text-primary">
+            <Icon path={mdiXml} />
+          </span>
+          <span>Software</span>
+          <span class="text-primary">
+            <Icon path={mdiTools} />
+          </span>
+          <span>Hardware</span>
+        </strong>
+      </p>
+    </div>
+
+    <div class="text-center my-16">
+      <Button href={CONSTS.urls.contact}>
+        <Icon path={mdiEmail} />
+        <span>Contact</span>
+      </Button>
+    </div>
+
+    <hr />
+
+    <Banner title="Welcome!" icon={mdiHandPeace} image="avatar.jpg">
+      Building innovative products from the ground up is what drives me. With
+      experience spanning engineering, management, and business, I'm here to
+      bring your ideas to life. My curiosity, energy, and ability to learn
+      quickly allow me to adapt to any project. Let's explore how I can
+      contribute to your success!
+    </Banner>
+
+    <hr />
+
+    <BannerIcon icon={mdiShieldStar}>
+      <strong>10 years of experience,</strong> as an entrepreneur and generalist
+      engineer
+    </BannerIcon>
+    <BannerIcon icon={mdiSync}>
+      <strong>Adapt to change,</strong> update requirements using agile project management
+    </BannerIcon>
+    <BannerIcon icon={mdiRobotHappy}>
+      <strong>Satisfaction guaranteed,</strong> with no commitment beyond the current
+      milestone
+    </BannerIcon>
+    <BannerIcon icon={mdiHandPeace}>
+      <strong>Transparency is key,</strong> enjoy a partnership based on honesty
+      and openness
+    </BannerIcon>
+
+    <hr />
+
+    <Banner title="Agile management" icon={mdiSync} image="spark2.jpg">
+      Let's cut through the jargon. What matters most is getting the job done
+      right and fast. Using a cycle of <strong>build, test, learn</strong>, I
+      make sure we're on track and not wasting time. For the teams and projects
+      I manage, I use approaches like <strong>scrum, kanban,</strong> and <strong
+        >lean startup</strong
+      >, but the real focus is on finding what works best for your project.
+    </Banner>
+
+    <Banner title="Software" icon={mdiXml} image="hero-scree.png">
+      <ul>
+        <li>
+          <span class="text-primary"><Icon path={mdiCellphone} /></span>
+          <strong>Web</strong> - Full-stack web apps, PWA, CI/CD...
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiCloud} /></span>
+          <strong>IoT</strong> - Embedded firmware, cloud...
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiController} /></span>
+          <strong> Real time</strong> - Games, VR, Unity, SDL2...
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiRobotIndustrial} /></span>
+          <strong>Industry</strong> - Machine vision, robotics...
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiRobotHappy} /></span><strong
+          >
+            AI</strong
+          > - Language models, deep learning...
+        </li>
+      </ul>
+    </Banner>
+
+    <Banner title="Hardware" icon={mdiTools} image="hero-freelance.jpg">
+      <ul>
+        <li>
+          <strong>
+            <span class="whitespace-nowrap">
+              <span class="text-primary"><Icon path={mdiChip} /></span>
+              Electronics
+            </span>
+            <span class="whitespace-nowrap">
+              <span class="text-primary"><Icon path={mdiWrench} /></span>
+              Mechanics
+            </span>
+            <span class="whitespace-nowrap">
+              <span class="text-primary"
+                ><Icon path={mdiRobotIndustrial} /></span
+              >
+              Robotics
+            </span>
+          </strong>
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiGift} /></span>
+          <strong>Consumer products</strong>
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiCog} /></span>
+          <strong>Industrial machines</strong>
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiLightningBolt} /></span>
+          <strong>Quick prototyping</strong> - Test it next day!
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiTruck} /></span>
+          <strong>Mass production</strong> - Assembly, PCBs, injection molding, etc.
+        </li>
+        <li>
+          <span class="text-primary"><Icon path={mdiSeal} /></span>
+          <strong> Certification</strong> - CE, FCC, etc.
+        </li>
+      </ul>
+    </Banner>
+
+    <div class="text-center my-16">
+      <Button href={CONSTS.urls.projects}>
+        <Icon path={mdiBriefcase} />
+        <span>Browse projects</span>
+      </Button>
+    </div>
+  </article>
+</BaseLayout>

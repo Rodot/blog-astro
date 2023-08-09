@@ -1,0 +1,25 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import Icon from "../components/Icon.astro";
+import { mdiBriefcase, mdiEmail, mdiHome } from "@mdi/js";
+import { CONSTS } from "../consts";
+---
+
+<HeaderLink href={CONSTS.urls.home}>
+  <span class="text-stone-100">
+    <Icon path={mdiHome} />
+  </span>
+  <span>Home</span>
+</HeaderLink>
+<HeaderLink href={CONSTS.urls.projects}>
+  <span class="text-stone-100">
+    <Icon path={mdiBriefcase} />
+  </span>
+  <span>Projects</span>
+</HeaderLink>
+<HeaderLink href={CONSTS.urls.contact}>
+  <span class="text-stone-100">
+    <Icon path={mdiEmail} />
+  </span>
+  <span>Contact</span>
+</HeaderLink>

@@ -1,0 +1,22 @@
+---
+import { mdiEmail, mdiLinkedin } from "@mdi/js";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { CONSTS } from "../consts";
+import Button from "../components/Button.astro";
+import Icon from "../components/Icon.astro";
+---
+
+<BaseLayout title="Contact">
+  <div class="text-center my-16">
+    <Button href={CONSTS.urls.email} target="blank">
+      <Icon path={mdiEmail} />
+      <span>Email me</span>
+    </Button>
+  </div>
+  <div class="text-center my-16">
+    <Button href={CONSTS.urls.linkedin} target="blank">
+      <Icon path={mdiLinkedin} />
+      <span>Linkedin</span>
+    </Button>
+  </div>
+</BaseLayout>

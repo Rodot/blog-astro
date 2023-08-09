@@ -1,6 +1,8 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    // Replace `astro/client` with `@astrojs/image/client`
+    "types": ["@astrojs/image/client"]
   }
 }

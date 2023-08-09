@@ -1,0 +1,11 @@
+---
+const { props } = Astro;
+---
+
+<a
+  href={props.href}
+  target={props?.target}
+  class="transition-all bg-primary hover:bg-amber-400 text-stone-800 hover:text-stone-800 shadow-md shadow-black hover:shadow-lg hover:shadow-black hover:border-0 py-2 px-8 uppercase font-semibold rounded text-xl"
+>
+  <slot />
+</a>

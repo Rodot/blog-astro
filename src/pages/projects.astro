@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BasePicture from "../components/BasePicture.astro";
+import Button from "../components/Button.astro";
+import Icon from "../components/Icon.astro";
+import {
+  mdiCart,
+  mdiHeart,
+  mdiLightbulb,
+  mdiPencilRuler,
+  mdiSync,
+  mdiTrophy,
+  mdiYoutube,
+} from "@mdi/js";
+---
+
+<BaseLayout title="Freelance CTO" description="Let's work together!">
+  <article class="p-4">
+    <BasePicture filename="hero-gamebuino.jpg" aspectRatio={3 / 1} />
+
+    <div class="text-center my-8">
+      <p>
+        <strong>Solo founder @ Gamebuino</strong>
+      </p>
+      <h2 class="text-primary text-3xl">Open-source game console</h2>
+    </div>
+
+    <ul class="mt-4">
+      <li>
+        <span class="text-primary"> <Icon path={mdiPencilRuler} /></span>
+        <strong>Designed an shipped</strong> - Electronics, firmware, injection molding,
+        packaging…
+      </li>
+      <li>
+        <span class="text-primary"> <Icon path={mdiCart} /></span>
+        <strong>Ran a business</strong> - Funding, marketing, PR, HR, management…
+      </li>
+      <li>
+        <span class="text-primary"> <Icon path={mdiHeart} /></span>
+        <strong>Created a community</strong> - Passionate open-source content creators
+        worldwide
+      </li>
+    </ul>
+
+    <h3 class="mt-4">
+      <span class="text-primary"> <Icon path={mdiTrophy} /></span>
+      Achievements
+    </h3>
+
+    <ul class="list-disc ml-4">
+      <li>5000+ consoles shipped, 80% exported (USA, Europe, Japan)</li>
+      <li>Crowdfunded 33 k€ on Indiegogo, 66 k€ on Kickstarter</li>
+      <li>
+        Several pitch and design awards - Etoile du design, Trophée startup
+        AURA...
+      </li>
+    </ul>
+
+    <div class="flex gap-4 my-8 flex-wrap justify-center">
+      <Button
+        href="https://www.youtube.com/watch?v=uLS5WzyEINA"
+        target="_blank"
+        class="mt-4"
+      >
+        <Icon path={mdiYoutube} /> Trailer
+      </Button>
+      <Button
+        href="https://www.youtube.com/watch?v=Lnf3ajd_GPc&t=11s"
+        target="_blank"
+        class="mt-4"
+      >
+        <Icon path={mdiYoutube} /> Pitch
+      </Button>
+      <Button
+        href="https://www.youtube.com/watch?v=Mdf2XTn5-LU"
+        target="_blank"
+        class="mt-4"
+      >
+        <Icon path={mdiYoutube} /> TV News
+      </Button>
+    </div>
+
+    <BasePicture
+      class="mt-16"
+      filename="hero-visioshape.jpg"
+      aspectRatio={3 / 1}
+    />
+
+    <div class="text-center my-8">
+      <strong class="mt-4">Freelance CTO @ Visioshape</strong>
+      <h2 class="text-primary text-3xl">Laser texturing machine</h2>
+    </div>
+
+    <ul class="list-disc ml-4 mt-4">
+      <li>
+        <span class="text-primary"> <Icon path={mdiSync} /></span>
+        <strong>Agile</strong> - Defined the customer's problem and how to continuously
+        measure progress
+      </li>
+      <li>
+        <span class="text-primary"> <Icon path={mdiLightbulb} /></span>
+        <strong>Creative</strong> - Designed a machine to etch at scales never reached
+        before (patent pending)
+      </li>
+      <li>
+        <span class="text-primary"> <Icon path={mdiPencilRuler} /></span>
+        <strong>Versatile</strong> - Computer vision, robotics, optics, electronics,
+        software architecture...
+      </li>
+    </ul>
+  </article>
+</BaseLayout>

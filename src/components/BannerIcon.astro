@@ -1,0 +1,16 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+  icon?: string;
+}
+---
+
+<div class="flex flex-row items-center gap-4 my-4">
+  <div class="text-primary">
+    <Icon path={Astro.props.icon} size={24} />
+  </div>
+  <div class="w-full">
+    <slot />
+  </div>
+</div>

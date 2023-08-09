@@ -1,0 +1,43 @@
+---
+import BasePicture from "./BasePicture.astro";
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+
+export interface Props {
+  title: string;
+  icon?: string;
+  image?: string;
+  cta?: string;
+  url?: string;
+}
+
+const { props } = Astro;
+---
+
+<div class="flex flex-col sm:flex-row items-center gap-4 my-16">
+  <div style="max-width: 180px;">
+    <BasePicture
+      filename={props.image}
+      aspectRatio={1}
+      eager
+      class="rounded-full"
+      sizes="180px"
+    />
+  </div>
+  <div class="w-full">
+    <h2 class="text-center sm:text-left text-primary text-3xl">
+      {
+        props.icon && (
+          <span class="text-primary">
+            <Icon path={props.icon} />
+          </span>
+        )
+      }
+      <span>{props.title}</span>
+    </h2>
+    <slot />
+    <div class="text-center sm:text-left mt-4">
+      {props.cta && props.url && <Button href={props.url}>{props.cta}</Button>}
+    </div>
+  </div>
+</div>
