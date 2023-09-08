@@ -39,11 +39,6 @@ html {
     @apply border-stone-100;
   }
 
-  body {
-    margin: auto;
-    max-width: 720px;
-  }
-
   hr {
     @apply border-borders;
     @apply border-t-2;

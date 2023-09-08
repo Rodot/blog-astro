@@ -22,9 +22,9 @@ const description = props.description ?? CONSTS.site.description;
   <head>
     <BaseHead title={title} description={description} />
   </head>
-  <body>
+  <body style="max-width:720px" class="mx-auto">
     <Header />
-    <main class={props.class} style="max-width:720px" class="mx-auto">
+    <main class={props.class}>
       <BasePicture filename={props.heroImage} aspectRatio={21 / 9} eager />
       <slot />
     </main>

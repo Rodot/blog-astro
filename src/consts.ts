@@ -10,7 +10,7 @@ export const CONSTS = {
     blog: "/blog/",
     contact: "/contact/",
     email:
-      "mailto:aurelien.rodot.717k2@passmail.net?subject=Contact%20from%20aurelienrodot.com",
+      "mailto:aurelien.rodot.717k2@passmail.net?subject=Contact%20from%20rodot.io",
     linkedin: "https://www.linkedin.com/in/rodot/",
   },
 };

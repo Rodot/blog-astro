@@ -1,14 +1,13 @@
 ---
-import { Picture } from "@astrojs/image/components";
 import type { ImageMetadata } from "astro";
-import { getImage } from "@astrojs/image";
+import { getImage } from "astro:assets";
 
 interface Props {
   filename?: string | undefined;
   alt?: string | undefined;
   eager?: boolean | undefined;
   class?: string | undefined;
-  aspectRatio?: number | undefined;
+  aspectRatio: number | undefined;
   sizes?: string | undefined;
 }
 const { props } = Astro;
@@ -26,30 +25,31 @@ const image = imagesrc
       src: imagesrc,
       alt: "",
       aspectRatio: props.aspectRatio,
+      width: 720,
+      format: "webp",
     })
   : undefined;
-
-const width = +(image?.width ?? 0);
-const height = props.aspectRatio
-  ? width / props.aspectRatio
-  : +(image?.height ?? 0);
 ---
 
 {
   imagesrc && (
-    <Picture
-      loading={props.eager ? "eager" : "lazy"}
-      widths={[180, 360, 720]}
-      sizes={
-        props.sizes ?? "(max-width: 720px) 100vw, (min-width: 720px) 720px"
+    <div
+      style={{
+        paddingBottom: props.aspectRatio
+          ? `${100 / props.aspectRatio}%`
+          : "auto",
+      }}
+      class={
+        "overflow-hidden relative w-full shadow-md shadow-black rounded " +
+        props?.class
       }
-      formats={["avif", "jpeg"]}
-      width={width}
-      height={height}
-      aspectRatio={props?.aspectRatio}
-      src={imagesrc}
-      alt={props.alt ?? ""}
-      class={"shadow-md shadow-black rounded " + props?.class}
-    />
+    >
+      <img
+        class="object-cover w-full h-full absolute"
+        loading={props.eager ? "eager" : "lazy"}
+        src={image?.src}
+        alt={props.alt ?? ""}
+      />
+    </div>
   )
 }
