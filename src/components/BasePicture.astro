@@ -39,10 +39,7 @@ const image = imagesrc
           ? `${100 / props.aspectRatio}%`
           : "auto",
       }}
-      class={
-        "overflow-hidden relative w-full shadow-md shadow-black rounded " +
-        props?.class
-      }
+      class={"overflow-hidden relative w-full" + props?.class}
     >
       <img
         class="object-cover w-full h-full absolute"
