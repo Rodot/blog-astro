@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { CONSTS } from "../consts";
+---
+
+<BaseLayout title="Thank you!" hideBanner={true}>
+  <div class="text-center my-16">
+    <p>Thank you for subscribing !</p>
+    <p>
+      PS: Did you check out my game <a
+        href={CONSTS.urls.scree}
+        class="text-amber-500">Scree on Steam</a
+      >?
+    </p>
+  </div>
+</BaseLayout>

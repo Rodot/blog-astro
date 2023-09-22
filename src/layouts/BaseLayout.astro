@@ -12,6 +12,7 @@ interface Props {
   description?: string | undefined;
   class?: string | undefined;
   heroImage?: string | undefined;
+  hideBanner?: boolean | undefined;
 }
 
 const { props } = Astro;
@@ -26,14 +27,18 @@ const description = props.description ?? CONSTS.site.description;
   </head>
   <body style="max-width:720px" class="mx-auto">
     <Header />
-    <div class="w-full p-4 text-center border-b-2 border-borders bg-stone-700">
-      Get projects updates and exclusive content!
-      <a href={CONSTS.urls.subscribe} target="blank" class="text-amber-500">
-        <span class="whitespace-nowrap"
-          ><Icon path={mdiEmail} /> SUBSCRIBE NOW</span
-        >
-      </a>
-    </div>
+    {
+      props.hideBanner ? null : (
+        <div class="w-full p-4 text-center border-b-2 border-borders bg-stone-700">
+          Get projects updates and exclusive content!
+          <a href={CONSTS.urls.subscribe} target="blank" class="text-amber-500">
+            <span class="whitespace-nowrap">
+              <Icon path={mdiEmail} /> SUBSCRIBE NOW
+            </span>
+          </a>
+        </div>
+      )
+    }
     <main class={props.class}>
       <BasePicture filename={props.heroImage} aspectRatio={21 / 9} eager />
       <slot />

@@ -15,6 +15,7 @@ import {
   mdiTrophy,
   mdiYoutube,
 } from "@mdi/js";
+import { CONSTS } from "../consts";
 ---
 
 <BaseLayout title="Freelance CTO" description="Let's work together!">
@@ -50,11 +51,7 @@ import {
         </ul>
 
         <div class="flex gap-4 mt-4 flex-wrap justify-center">
-          <Button
-            href="https://store.steampowered.com/app/2016900/Scree"
-            target="_blank"
-            class="mt-4"
-          >
+          <Button href={CONSTS.urls.scree} target="_blank" class="mt-4">
             <Icon path={mdiSteam} /> Wishlist on Steam
           </Button>
         </div>
