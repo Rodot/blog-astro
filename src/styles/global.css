@@ -29,12 +29,12 @@ html {
     @apply text-primary;
     @apply border-primary;
     @apply box-content;
+    @apply border-b-2;
+    @apply border-transparent;
   }
 
   a:hover,
   a:active {
-    @apply border-b-2;
-    @apply -mb-[2px];
     @apply text-stone-100;
     @apply border-stone-100;
   }
